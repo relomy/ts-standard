@@ -41,4 +41,12 @@ if out="$("$bin/oxlint" --deny-warnings bad/reasonless.ts 2>&1)"; then
   exit 1
 fi
 grep -q "require-disable-reason" <<<"$out" || { echo "expected require-disable-reason in output" >&2; echo "$out" >&2; exit 1; }
+echo "the newly enabled anti-slop rules must fail lint"
+if out="$("$bin/oxlint" --deny-warnings bad/newly-enabled.ts 2>&1)"; then
+  echo "newly enabled sample passed lint" >&2
+  exit 1
+fi
+for rule in no-chained-type-assertions no-object-parameters no-reflect-get; do
+  grep -q "$rule" <<<"$out" || { echo "expected $rule in output" >&2; echo "$out" >&2; exit 1; }
+done
 echo "smoke ok"

@@ -82,28 +82,35 @@ A consumer's own `rules` override the base.
   diagnostics). The five `typescript/no-unsafe-{argument,assignment,call,member-access,return}`
   are errors for `**/*.ts`.
 - `eslint/max-lines` is 300 (blank and comment lines count).
-- The nkzw `quality/*` anti-slop plugin is wired in. Any rule with hits in
-  either consumer repo is off; rules with no hits are errors.
+- The nkzw `quality/*` anti-slop plugin is wired in. Six rules are errors and
+  six are off, as listed below.
 
 ### Anti-slop rules
 
-Hits scanned over the whole of each repo (repo A, repo B, the first two consumers) on
-2026-11-24.
+Errors:
 
-| rule                                         | repo A | repo B | base  |
-| -------------------------------------------- | ------ | ------ | ----- |
-| `quality/no-conditional-empty-object-spread` | 0      | 156    | off   |
-| `quality/no-unknown-returns`                 | 5      | 24     | off   |
-| `quality/no-known-value-widening`            | 2      | 20     | off   |
-| `quality/no-unsafe-dictionary-type`          | 2      | 20     | off   |
-| `quality/no-object-parameters`               | 0      | 15     | off   |
-| `quality/no-array-filter-map`                | 0      | 14     | off   |
-| `quality/no-chained-type-assertions`         | 0      | 3      | off   |
-| `quality/no-reflect-get`                     | 0      | 1      | off   |
-| `quality/no-reduce-accumulator-copy`         | 0      | 0      | error |
-| `quality/no-reflect-apply`                   | 0      | 0      | error |
-| `quality/no-unknown-type-aliases`            | 0      | 0      | error |
-| `quality/no-widen-then-assert`               | 0      | 0      | error |
+- `quality/no-chained-type-assertions`
+- `quality/no-reflect-get`
+- `quality/no-reduce-accumulator-copy`
+- `quality/no-reflect-apply`
+- `quality/no-widen-then-assert`
+- `quality/no-object-parameters`: a consumer with existing hits ratchets them
+  and names the rule in its local oxlint config.
+
+Off, with the reason:
+
+- `quality/no-array-filter-map`: the filter-then-map form is clear and the
+  suggested rewrites are no better.
+- `quality/no-conditional-empty-object-spread`: the conditional spread is an
+  accepted idiom for optional fields and had the most hits.
+- `quality/no-known-value-widening`: too many false positives on
+  deliberate widening.
+- `quality/no-unknown-returns`: `unknown` returns are legitimate at parsing
+  boundaries.
+- `quality/no-unsafe-dictionary-type`: string-keyed dictionaries are
+  accepted where the key set is open.
+- `quality/no-unknown-type-aliases`: aliasing `unknown` to name a boundary
+  type is acceptable. (It was an error in v0.1.0.)
 
 ## Adoption guidance
 

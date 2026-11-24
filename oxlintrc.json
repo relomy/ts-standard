@@ -87,13 +87,13 @@
     "quality/no-unknown-returns": "off",
     "quality/no-known-value-widening": "off",
     "quality/no-unsafe-dictionary-type": "off",
-    "quality/no-object-parameters": "off",
+    "quality/no-object-parameters": "error",
     "quality/no-array-filter-map": "off",
-    "quality/no-chained-type-assertions": "off",
-    "quality/no-reflect-get": "off",
+    "quality/no-chained-type-assertions": "error",
+    "quality/no-reflect-get": "error",
     "quality/no-reduce-accumulator-copy": "error",
     "quality/no-reflect-apply": "error",
-    "quality/no-unknown-type-aliases": "error",
+    "quality/no-unknown-type-aliases": "off",
     "quality/no-widen-then-assert": "error"
   },
   "overrides": [
