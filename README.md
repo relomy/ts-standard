@@ -1,8 +1,9 @@
 # ts-standard
 
 Shared TypeScript configuration: a strict tsconfig base, an oxlint base and a
-prettier config. Configuration only. There is no code, build, bin, custom check
-or ratchet in this package.
+prettier config, plus one small option-free oxlint rule
+(`require-disable-reason.js`). There is no build, bin, shared check or ratchet
+in this package.
 
 All rights reserved. This repository is public so it can be installed without
 credentials, but it carries no license and grants no open-source rights.
@@ -16,6 +17,8 @@ The package is private and is never published to npm. (The unscoped
 - `tsconfig.json`: the strict options common to the consumer repos. No
   `include` or `files`; the consumer sets those.
 - `oxlintrc.json`: the oxlint base (rules below).
+- `require-disable-reason.js`: the oxlint JS plugin the base loads. It needs
+  no consumer setup beyond extending the base.
 - `prettier.json`: prettier options pinned to current behavior, including
   `trailingComma: "all"`.
 
@@ -114,9 +117,10 @@ Hits scanned over the whole of each repo (repo A, repo B, the first two consumer
   does not follow `extends`) must keep its rules, such as `eslint/max-lines`
   and the five type-aware rules, literally in the local file.
 - Every lint-disable comment needs a reason, for example
-  `// oxlint-disable-next-line <rule> -- <reason>`. No oxlint rule enforces
-  this (checked at oxlint 1.94.0), so it is a review rule with no mechanism
-  here. This is pending an operator decision on enforcement.
+  `// oxlint-disable-next-line <rule> -- <reason>`. The
+  `ts-standard/require-disable-reason` rule enforces this at error for
+  `oxlint-disable*` and `eslint-disable*` directives (no native oxlint rule
+  does, checked at oxlint 1.95.0). It takes no options.
 
 ## Known limit
 

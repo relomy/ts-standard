@@ -35,4 +35,10 @@ fi
 for rule in no-unsafe-member-access no-unsafe-assignment no-reflect-apply; do
   grep -q "$rule" <<<"$out" || { echo "expected $rule in output" >&2; echo "$out" >&2; exit 1; }
 done
+echo "a disable directive without a reason must fail lint"
+if out="$("$bin/oxlint" --deny-warnings bad/reasonless.ts 2>&1)"; then
+  echo "reasonless directive passed lint" >&2
+  exit 1
+fi
+grep -q "require-disable-reason" <<<"$out" || { echo "expected require-disable-reason in output" >&2; echo "$out" >&2; exit 1; }
 echo "smoke ok"

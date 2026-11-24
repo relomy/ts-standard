@@ -2,10 +2,12 @@
   "name": "ts-standard",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "Shared TypeScript configuration: tsconfig, oxlint and prettier bases.",
   "files": [
     "tsconfig.json",
     "oxlintrc.json",
+    "require-disable-reason.js",
     "prettier.json",
     "README.md"
   ],
