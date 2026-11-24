@@ -14,12 +14,17 @@
     {
       "name": "quality",
       "specifier": "@nkzw/oxlint-config/quality/index.js"
+    },
+    {
+      "name": "ts-standard",
+      "specifier": "./require-disable-reason.js"
     }
   ],
   "options": {
     "typeAware": true
   },
   "rules": {
+    "ts-standard/require-disable-reason": "error",
     "eslint/max-lines": [
       "error",
       {
