@@ -1,0 +1,5 @@
+{
+  "name": "ts-standard-smoke-consumer",
+  "private": true,
+  "prettier": "ts-standard/prettier.json"
+}

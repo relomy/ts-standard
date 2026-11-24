@@ -1,0 +1,114 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "error"
+  },
+  "plugins": [
+    "eslint",
+    "typescript",
+    "import",
+    "node",
+    "oxc"
+  ],
+  "env": {
+    "builtin": true,
+    "node": true
+  },
+  "jsPlugins": [
+    {
+      "name": "quality",
+      "specifier": "@nkzw/oxlint-config/quality/index.js"
+    }
+  ],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "eslint/max-lines": [
+      "error",
+      {
+        "max": 300
+      }
+    ],
+    "eslint/no-undef": "error",
+    "eslint/no-fallthrough": "error",
+    "eslint/no-throw-literal": "error",
+    "eslint/prefer-promise-reject-errors": "error",
+    "eslint/eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "oxc/no-map-spread": "error",
+    "eslint/prefer-object-spread": "error",
+    "typescript/ban-ts-comment": "error",
+    "typescript/no-array-delete": "error",
+    "typescript/no-duplicate-enum-values": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/no-extra-non-null-assertion": "error",
+    "typescript/no-misused-new": "error",
+    "typescript/no-namespace": "error",
+    "typescript/no-non-null-asserted-nullish-coalescing": "error",
+    "typescript/no-this-alias": "error",
+    "typescript/no-unnecessary-type-constraint": "error",
+    "typescript/no-unsafe-declaration-merging": "error",
+    "typescript/no-var-requires": "error",
+    "import/no-cycle": "error",
+    "import/no-duplicates": "error",
+    "typescript/await-thenable": "off",
+    "typescript/consistent-return": "off",
+    "typescript/no-base-to-string": "off",
+    "typescript/no-duplicate-type-constituents": "off",
+    "typescript/no-floating-promises": "off",
+    "typescript/no-for-in-array": "off",
+    "typescript/no-generated-empty-object-type": "off",
+    "typescript/no-implied-eval": "off",
+    "typescript/no-meaningless-void-operator": "off",
+    "typescript/no-misused-spread": "off",
+    "typescript/no-redundant-type-constituents": "off",
+    "typescript/no-unnecessary-boolean-literal-compare": "off",
+    "typescript/no-unnecessary-template-expression": "off",
+    "typescript/no-unnecessary-type-arguments": "off",
+    "typescript/no-unnecessary-type-assertion": "off",
+    "typescript/no-unnecessary-type-conversion": "off",
+    "typescript/no-unnecessary-type-parameters": "off",
+    "typescript/no-unsafe-enum-assignment": "off",
+    "typescript/no-unsafe-enum-comparison": "off",
+    "typescript/no-unsafe-type-assertion": "off",
+    "typescript/no-unsafe-unary-minus": "off",
+    "typescript/no-useless-default-assignment": "off",
+    "typescript/require-array-sort-compare": "off",
+    "typescript/restrict-template-expressions": "off",
+    "typescript/unbound-method": "off",
+    "quality/no-conditional-empty-object-spread": "off",
+    "quality/no-unknown-returns": "off",
+    "quality/no-known-value-widening": "off",
+    "quality/no-unsafe-dictionary-type": "off",
+    "quality/no-object-parameters": "off",
+    "quality/no-array-filter-map": "off",
+    "quality/no-chained-type-assertions": "off",
+    "quality/no-reflect-get": "off",
+    "quality/no-reduce-accumulator-copy": "error",
+    "quality/no-reflect-apply": "error",
+    "quality/no-unknown-type-aliases": "error",
+    "quality/no-widen-then-assert": "error"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts"
+      ],
+      "rules": {
+        "typescript/no-unsafe-argument": "error",
+        "typescript/no-unsafe-assignment": "error",
+        "typescript/no-unsafe-call": "error",
+        "typescript/no-unsafe-member-access": "error",
+        "typescript/no-unsafe-return": "error"
+      }
+    }
+  ]
+}

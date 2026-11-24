@@ -1,0 +1,4 @@
+{
+  "extends": "ts-standard/tsconfig.json",
+  "include": ["good.ts", "bad/**/*.ts"]
+}

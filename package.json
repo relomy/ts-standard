@@ -1,0 +1,27 @@
+{
+  "name": "ts-standard",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared TypeScript configuration: tsconfig, oxlint and prettier bases.",
+  "files": [
+    "tsconfig.json",
+    "oxlintrc.json",
+    "prettier.json",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@nkzw/oxlint-config": "4.1.0",
+    "oxlint": "1.94.0",
+    "oxlint-tsgolint": "7.0.2008",
+    "prettier": "3.10.0",
+    "typescript": "7.0.2"
+  },
+  "devDependencies": {
+    "@nkzw/oxlint-config": "4.1.0",
+    "@types/node": "24.19.2",
+    "oxlint": "1.94.0",
+    "oxlint-tsgolint": "7.0.2008",
+    "prettier": "3.10.0",
+    "typescript": "7.0.2"
+  }
+}
