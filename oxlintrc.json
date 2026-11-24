@@ -5,13 +5,7 @@
     "suspicious": "error",
     "perf": "error"
   },
-  "plugins": [
-    "eslint",
-    "typescript",
-    "import",
-    "node",
-    "oxc"
-  ],
+  "plugins": ["eslint", "typescript", "import", "node", "oxc"],
   "env": {
     "builtin": true,
     "node": true
@@ -99,9 +93,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "**/*.ts"
-      ],
+      "files": ["**/*.ts"],
       "rules": {
         "typescript/no-unsafe-argument": "error",
         "typescript/no-unsafe-assignment": "error",

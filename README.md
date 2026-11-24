@@ -88,19 +88,19 @@ Hits scanned over the whole of each repo (repo A, repo B, the first two consumer
 2026-11-24.
 
 | rule                                         | repo A | repo B | base  |
-| -------------------------------------------- | ----------- | ---------------- | ----- |
-| `quality/no-conditional-empty-object-spread` | 0           | 156              | off   |
-| `quality/no-unknown-returns`                 | 5           | 24               | off   |
-| `quality/no-known-value-widening`            | 2           | 20               | off   |
-| `quality/no-unsafe-dictionary-type`          | 2           | 20               | off   |
-| `quality/no-object-parameters`               | 0           | 15               | off   |
-| `quality/no-array-filter-map`                | 0           | 14               | off   |
-| `quality/no-chained-type-assertions`         | 0           | 3                | off   |
-| `quality/no-reflect-get`                     | 0           | 1                | off   |
-| `quality/no-reduce-accumulator-copy`         | 0           | 0                | error |
-| `quality/no-reflect-apply`                   | 0           | 0                | error |
-| `quality/no-unknown-type-aliases`            | 0           | 0                | error |
-| `quality/no-widen-then-assert`               | 0           | 0                | error |
+| -------------------------------------------- | ------ | ------ | ----- |
+| `quality/no-conditional-empty-object-spread` | 0      | 156    | off   |
+| `quality/no-unknown-returns`                 | 5      | 24     | off   |
+| `quality/no-known-value-widening`            | 2      | 20     | off   |
+| `quality/no-unsafe-dictionary-type`          | 2      | 20     | off   |
+| `quality/no-object-parameters`               | 0      | 15     | off   |
+| `quality/no-array-filter-map`                | 0      | 14     | off   |
+| `quality/no-chained-type-assertions`         | 0      | 3      | off   |
+| `quality/no-reflect-get`                     | 0      | 1      | off   |
+| `quality/no-reduce-accumulator-copy`         | 0      | 0      | error |
+| `quality/no-reflect-apply`                   | 0      | 0      | error |
+| `quality/no-unknown-type-aliases`            | 0      | 0      | error |
+| `quality/no-widen-then-assert`               | 0      | 0      | error |
 
 ## Adoption guidance
 
